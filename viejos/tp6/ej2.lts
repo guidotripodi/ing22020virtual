@@ -1,0 +1,7 @@
+//EJERCICIO2
+const N = 2
+VARIABLE = VARIABLE[0],
+VARIABLE[v:0..N] = (write[n:0..N]->VARIABLE[n] | read[v]->VARIABLE[v] ).
+
+
+

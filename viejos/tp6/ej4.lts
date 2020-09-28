@@ -1,0 +1,10 @@
+range R = 0..3
+VARIABLE = VARIABLE[0],
+VARIABLE[i:R] = ( read[i] -> VARIABLE[i] | write[j:R] -> VARIABLE[j] ).
+
+//EJERCICIO4
+
+ESCRITOR = (write[e:R]->ESCRITOR).
+LECTOR = (read[e:R]-> LECTOR[e]),
+LECTOR[e:R] = (when(e!=0) imprimir[e]->LECTOR | when(e==0) read[i:R]->LECTOR[i] ).
+||ESCRITORLECTOR = ( ESCRITOR || LECTOR || VARIABLE ).

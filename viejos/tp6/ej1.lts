@@ -1,0 +1,16 @@
+/** Concurrency: State Models and Java Programs
+ *             Jeff Magee and Jeff Kramer
+ *  
+ */
+
+//EJERCICIO 1
+ENCUENTRO = (hola->conversar->adios->STOP).
+
+TRABAJO(N=0) = (llego->trabajo->TRABAJO[1]),
+TRABAJO[1] = (parto->TRABAJO).
+MOVIMIENTO = (adelante-> ( izquierda->STOP | derecha->MOVIMIENTO)).
+COIN = ( flip->heads->COIN | flip->tails->COIN ).
+CUATROTIKS = (tick-> tick-> tick-> tick->STOP).
+range D = 1..3 
+DOUBLE = (in[d:D]->out[d*2]->DOUBLE).
+

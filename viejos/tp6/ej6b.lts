@@ -1,0 +1,11 @@
+P = (a -> b -> P).
+Q = (c -> b -> Q).
+
+
+//permitir solo a->c->b
+R = (a->c->b->R).
+
+||S = (P || Q || R).
+
+
+

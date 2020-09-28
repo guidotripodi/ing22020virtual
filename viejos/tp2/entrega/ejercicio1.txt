@@ -1,0 +1,18 @@
+public int ejercicio1(int, int)
+    {
+        int i1, i2, $i3, i4;
+        A r0;
+
+        r0 := @this: A;
+
+        i1 := @parameter0: int;
+
+        i2 := @parameter1: int;
+
+        $i3 = 0 * i2;
+
+        i4 = i1 / $i3;
+/*Possible division by zero here*/
+
+        return i4;
+    }

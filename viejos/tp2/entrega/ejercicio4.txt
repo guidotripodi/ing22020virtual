@@ -1,0 +1,17 @@
+    public int ejercicio4(int, int)
+    {
+        int i0, i1, i2;
+        A r0;
+
+        r0 := @this: A;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i2 = i0 / i1;
+/*Possible division by zero here*/
+
+        return i2;
+    }
+}

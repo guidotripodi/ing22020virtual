@@ -1,0 +1,10 @@
+P = (a -> b -> P).
+Q = (c -> b -> Q).
+E = (  a->c->b->E | c->a->b->E ).
+//||S = (P || Q ).
+
+
+T=(c->T2),
+T2=(b->T | d->b->T).
+//No se como escribir J commo composicion de S y T directamente sin reescribir como a continuacion:
+||J = (P || Q || T).

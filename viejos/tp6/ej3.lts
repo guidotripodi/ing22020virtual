@@ -1,0 +1,7 @@
+//EJERCICIO3
+
+range N = 0..9
+NIVEL = NIVEL[5],
+NIVEL[k:N] = (nivel[k] ->( when(k<9) variar -> NIVEL[k+1] |when(k>0) variar -> NIVEL[k-1] )).
+
+SENSAR(N=5) = (nivel[n:N]->(when (n<2) low->SENSAR | when (n<8 & n>=2) normal->SENSAR |when (n>=8) high->SENSAR )).

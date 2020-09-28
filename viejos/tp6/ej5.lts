@@ -1,0 +1,19 @@
+const C = 3
+
+ENTRADA = (open -> ENTRADA[0]),
+ENTRADA[0] = (entry[i:1..C]->ENTRADA[0] | close -> ENTRADA).//La entrada acepta entradas siempre y cuando este abierta
+
+SALIDA = (entry[1] -> SALIDA[1] | empty -> SALIDA), //Ya se puede salir al primero que entra
+SALIDA[i:1..C] = (when(i==1) exit[1]->SALIDA | when(i>1) exit[i] -> SALIDA[i-1] | when(i<C) entry[i+1]->SALIDA[i+1]).
+
+DIRECTOR = DIRECTOR[0],
+DIRECTOR[0] = (open->DIRECTOR[1]),
+DIRECTOR[1] = (close->DIRECTOR[2]),
+DIRECTOR[2] = (empty ->DIRECTOR). //Empty lo envia el controlador y reinicia al director
+
+
+CONTROL = ( open -> (entry[1] -> CONTROL[0] | close -> empty -> CONTROL)),
+CONTROL[0] = (close -> CONTROL[1]),
+CONTROL[1] = ( empty -> CONTROL ).
+
+||COMPOSICION = (ENTRADA || SALIDA || DIRECTOR || CONTROL).
