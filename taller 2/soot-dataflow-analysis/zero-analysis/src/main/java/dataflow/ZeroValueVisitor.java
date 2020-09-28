@@ -33,9 +33,9 @@ public class ZeroValueVisitor extends AbstractValueVisitor<ZeroAbstractValue> {
   public void visitDivExpression(ZeroAbstractValue leftOperand, ZeroAbstractValue rightOperand) {
     // Tener en cuenta que this.possibleDivisionByZero indica que hay una posible division.
     ///esteee
-
-    throw new UnsupportedOperationException();
-  }
+    possibleDivisionByZero = rightOperand == ZeroAbstractValue.ZERO || rightOperand == ZeroAbstractValue.MAYBE_ZERO;
+    resolvedValue = leftOperand.divideBy(rightOperand);
+  } 
   
 
   @Override
@@ -56,10 +56,8 @@ public class ZeroValueVisitor extends AbstractValueVisitor<ZeroAbstractValue> {
   @Override
   public void visitIntegerConstant(int value) {
     // Tener en cuenta que this.resolvedValue contiene el valor abstracto que se quiere devolver.
-    
-    //esteee
-
-    throw new UnsupportedOperationException();
+    if (value == 0) resolvedValue = ZeroAbstractValue.ZERO;
+    else resolvedValue = ZeroAbstractValue.NOT_ZERO;
   }
 
   @Override

@@ -1,6 +1,6 @@
 package dataflow.abs;
 
-import java.util.HashMap;
+import java.util.HashMap; 
 
 public class ZeroAbstractSet {
 
@@ -25,9 +25,16 @@ public class ZeroAbstractSet {
 	}
 
 	public ZeroAbstractSet union(ZeroAbstractSet another){
-
-		//esteeee
-	    throw new UnsupportedOperationException();
+		// Si another es vacio retorno el conjunto this. 
+		for (String key : another.map.keySet()) {
+			if (this.hasValue(key)) {
+				ZeroAbstractValue mergedValue = this.getValue(key).merge(another.getValue(key));
+				this.setValue(key, mergedValue);
+			}
+			else this.setValue(key, another.getValue(key));
+		}
+		another.clear(); 
+		return this; 
 
 	}
 

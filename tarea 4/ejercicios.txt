@@ -1,0 +1,25 @@
+----- EJ3
+
+Un arbol con nodo raiz y dos hijos o solo una raiz.
+
+Opcion 3
+
+La agregará como una secuencia de invocaciones a métodos para futuras extensiones
+
+------- EJ 4
+
+Un arbol vacio
+
+Opcion 1
+
+La descartará como una secuencia ilegal (i.e. incumple precondiciones)
+
+
+--------EJ 5
+
+Un ciclo de esa forma ya va a tener siempre a uno visitado
+
+Opcion 1
+
+La descartará como una secuencia ilegal (i.e. incumple precondiciones)
+
