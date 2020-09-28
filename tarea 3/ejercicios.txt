@@ -1,0 +1,63 @@
+Ejercicio 1
+
+A != null && B != null && A.length <= B.length
+
+--------------------------------------
+
+Ejercicio 2
+
+Test2() {
+  int rv = foo(1,1);
+  assertEquals(1, rv);
+}
+
+--------------------------------------
+
+Ejercicio 3
+
+void test3(){
+	assertEquals(1, foo(1,0));
+}
+
+------------------------------------
+
+Ejercicio 4
+
+int triangle(int a, int b, int c) {
+ if (a <= 0 || b <= 0 || c <= 0) {
+   return 4; // invalid
+ }
+ if (! (a + b > c && a + c > b && b + c > a)) {
+   return 4; // invalid
+ }
+ if (a == b && b == c) {
+   return 1; // equilateral
+ }
+ if (a == b || b == c || a++ == c) {
+   return 2; // isosceles
+ } 
+ return 3; // scalene 
+}
+
+int triangleMutante(int a, int b, int c) {
+ if (a <= 0 || b <= 0 || c <= 0) {
+   return 4; // invalid
+ }
+ if (! (a + b > c && a + c > b && b + c > a)) {
+   return 4; // invalid
+ }
+ if (a == b && b == c) {
+   return 1; // equilateral
+ }
+ if (a == b || b == c || a == c) {
+   return 2; // isosceles
+ } 
+ return 3; // scalene 
+}
+
+Propongo (a=2,b=1,c=2), el programa creado por mi, devolvera 2 (ISOSCELES)
+en cambio en el programa ya dado, retornara 3 (Escaleno). Por lo tanto, los resultados difieren lo que genera que el mutante propuesto por mi, muera.
+
+void test4() {
+   assertEquals(3,triangle(2,1,2))
+}

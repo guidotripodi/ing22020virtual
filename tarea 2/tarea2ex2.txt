@@ -1,0 +1,3 @@
+in(n,v) :- gen(n,v).
+in(n,v) :- out(n,v),!kill(n,v).
+out(n,v):- in(m,v),next(n,m).
