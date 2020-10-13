@@ -1,14 +1,47 @@
+EJ1
+
+Orden:	1      2      3     4     5       6       7
+Arbol:	N0 —> null —> N1 —> N2 —> null —> null —> null 
+
+Instancias:
+
+1     2     3       4       7       5       6
+N0 —> N1 —> null —> null —> null —> null —> null 
+
+1     2     5     3       4
+N0 —> N1 —> N2 —> null —> null —> null —> null 
+
+------------------
+
+EJ 2
+
+public boolean repOK(DLList dl){
+  if (dl.size == 0) return true;
+  Node first = dl.first;
+  Node last = dl.last;
+  while(first != last) {
+    if(first.next == null || last.previous == null) return false
+    else {
+      first = first.next;
+      last = last.previous;
+    }
+  }
+  return true;
+}
+
+
 ----- EJ3
 
 Un arbol con nodo raiz y dos hijos o solo una raiz.
 
 Opcion 3
 
+La instancia mas pequeña que generara Randoop es el árbol con el root = null . Osea no tiene ningún nodo.
 La agregará como una secuencia de invocaciones a métodos para futuras extensiones
 
 ------- EJ 4
 
-Un arbol vacio
+La instancia mas pequeña para violar la precondicion del removeRoot es el árbol sin nodos, root = null. 
 
 Opcion 1
 
@@ -17,9 +50,12 @@ La descartará como una secuencia ilegal (i.e. incumple precondiciones)
 
 --------EJ 5
 
-Un ciclo de esa forma ya va a tener siempre a uno visitado
+Un ciclo de esa forma ya va a tener siempre a uno visitado. La instancia mas pequeña seria N0 --> null --> N0
 
 Opcion 1
 
 La descartará como una secuencia ilegal (i.e. incumple precondiciones)
+
+
+
 
